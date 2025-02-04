@@ -1,9 +1,9 @@
 # HRManagementPortal
-Overview
+Overview:-
 
 A web-based application for managing HR processes like employee records, role-based access, and data import/export using Java, Spring Boot, and MySQL.
 
-Features
+Features:-
 
 User Authentication: Secure login with roles (Admin, HR, Employee).
 
@@ -15,7 +15,7 @@ Dashboard: View employee stats.
 
 File Upload: Browse and import files.
 
-Technologies Used
+Technologies Used :-
 
 Backend: Java, Spring Boot, Spring Security
 
