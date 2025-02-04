@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+          <script type="text/javascript" src="js/emp.js"></script>
+
+
+
+</head>
+<body>
+<section>
+    <h2 style="text-align: center;">All Employees</h2>
+	<hr>
+    <div class="container-fluid mt-3 table-responsive">
+        <table id="example" class="display nowrap" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>EMP ID</th>
+                    <th>Employee Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Date of Joining</th>
+                    <th>Mobile Number</th>
+                    <th>Aadhaar Number</th>
+                    <th>Account Number</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Previous Company</th>
+                    <th>PF Number</th>
+                    <th>Salary</th>
+                    <th>Current Address</th>
+                    <th>Permanent Address</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="e : ${allEmployee}">
+                    <td th:text="${e.id}">1</td>
+                    <td th:text="${e.empName}">Ankit Yadav</td>
+                    <td th:text="${e.email}">ankit@gmail.com</td>
+                    <td th:text="${e.gender}">M</td>
+                    <td th:text="${e.dob}">12/09/1999</td>
+                    <td th:text="${e.doj}">24/12/2024</td>
+                    <td th:text="${e.mobile}">9878675645</td>
+                    <td th:text="${e.adharNum}">778866559876</td>
+                    <td th:text="${e.accountNumber}">13458976563</td>
+                    <td th:text="${e.department}">Security</td>
+                    <td th:text="${e.designation}">Security Officer</td>
+                    <td th:text="${e.previousCompany}">Tata Technology</td>
+                    <td th:text="${e.pfNumber}">PF367492630</td>
+                    <td th:text="${e.salary}">350,000</td>
+                    <td th:text="${e.currentAddress}">Sonpet Society, Bhosari, Pune</td>
+                    <td th:text="${e.permanentAddress}">Gwalior, Madhya Pradesh</td>
+                    <td th:text="${e.active}">Yes</td>
+                    <td>
+						<a th:onclick="|editRecord('${e.id}')|" style="color: blue; cursor: pointer;" class="fa-solid fa-pen-to-square ms-2" title="Edit"></a>
+                        <i th:onclick="|deleteRecordById('${e.id}')|"style="color: red; cursor: pointer;" class="fas fa-trash ms-2" title="Delete"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th"http://www.thymelaef.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section>
+	<div class="row">
+	<div class="col-md-10 offset-md-1">
+		<div class="card mt-3">
+			<div class="card-body">
+			<h4 style="text-align: center;">Employee Registeration Form</h4>
+			<hr>
+			
+			<form th:action="@{/save-employee}" method="POST">
+				<div class="row">
+					<!--Employee Id-->
+					<div class="col-md-3 mt-2">
+						<label for="empName" class="form-label">Employee Name</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="text" class="form-control" name="empName" id="empname" required="required">
+					</div>
+					
+					<!--Email-->
+					<div class="col-md-3 mt-2">
+						<label for="email" class="form-label">Email Id</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="text" class="form-control" name="email" id="email" required="required">
+					</div>
+					
+					<!--Gender-->
+					<div class="col-md-3 mt-2">
+						<label for="gender" class="form-label">Gender</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input class="form-check-input" type="radio" name="gender" id="gender" value="M" >Male
+						
+						<input class="form-check-input ms-4" type="radio" name="gender" id="gender" value="F">Female
+					</div>
+					
+					<!--DOB-->
+					<div class="col-md-3 mt-2">
+						<label for="dob" class="form-label">Date of Birth</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="date" class="form-control" name="dob" id="dob" required="required">
+					</div>
+					
+					<!--DOJ-->
+					<div class="col-md-3 mt-2">
+						<label for="doj" class="form-label">Date of Join</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="date" class="form-control" name="doj" id="doj" required="required">
+					</div>
+					
+					<!--Mobile No-->
+					<div class="col-md-3 mt-2">
+						<label for="mobile" class="form-label">Mobile Number</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="number" class="form-control" name="mobile" id="mobile" required="required">
+					</div>
+					
+					<!--Adhar No-->
+					<div class="col-md-3 mt-2">
+						<label for="adharNum" class="form-label">Adhar Number</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="number" class="form-control" name="adharNum" id="adharNum" required="required">
+					</div>
+					
+					<!--Acc No-->
+					<div class="col-md-3 mt-2">
+						<label for="accountNumber" class="form-label">Account Number</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="number" class="form-control" name="accountNumber" id="accountNumber" autocomplete="off" required="required">
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="department" class="form-label">Department</label>
+					</div>
+					
+					<div class="col-md-9 mt-2">
+						<select class="form-select" id="department" name="department" onchange="updateDesignations()">
+							<option selected="selected">Select Department</option>
+							<option value="Development">Development</option>
+							<option value="QA & Automation Testing">QA & Automation Testing</option>
+							<option value="Networking">Networking</option>
+							<option value="HR Team">HR Team</option>
+							<option value="Security">Security</option>
+							<option value="Sales & Marketing">Sales & Marketing</option>
+						</select>
+					</div>
+					
+					
+					<div class="col-md-3 mt-2">
+						<label for="designation" class="form-label">Designation</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<select class="form-select" id="designation" name="designation">
+							<option selected="selected">Select Designation</option>
+						</select>
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="previousCompany" class="form-label">Previous Company Name</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="text" class="form-control" name="previousCompany" id="previousCompany" autocomplete="off" required="required">
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="pfNumber" class="form-label">PF Number</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="text" class="form-control" name="pfNumber" id="pfNumber" autocomplete="off" required="required">
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="salary" class="form-label">Salary</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<input type="number" class="form-control" name="salary" id="salary" autocomplete="off" required="required">
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="currentAddress" class="form-label">Current Address</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<textarea rows="" cols="" name="currentAddress" id="currentAddress" style="width: 100%" required="required"></textarea>
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="permanentAddress" class="form-label">Permanent Address</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<textarea rows="" cols="" name="permanentAddress" id="permanentAddress" style="width: 100%" required="required" maxlength="1000" minlength="10"></textarea>
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label for="role" class="form-label">Role</label>
+					</div>
+					<div class="col-md-9 mt-2">
+						<select class="form-select" name="role" id="role">
+							<option selected="selected">Select Role</option>
+					
+							<option value="USER">User</option>
+							<option value="ADMIN">Admin</option>
+						</select>
+					</div>
+					
+					<div class="col-md-3 mt-2">
+						<label class="form-check-label" for="active">Active</label>
+					</div>
+					<div class="col-md-9 mt-2 form-check form-switch form-switch">
+						<input style="font-size: 25px;" class="form-check-input ms-1" type="checkbox" name="active" id="active" checked>
+					</div>
+					
+					<div class="container text-center">
+						<div>
+						<input type="submit" value="submit" class="btn btn-success">
+						</div>
+					</div>
+			</form>
+			
+			</div>
+		</div>
+	</div>
+
+
+ </section>
+ 
+</body>
+</html>

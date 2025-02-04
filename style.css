@@ -1,0 +1,65 @@
+/* Sidebar */
+.sidebar {
+    height: calc(100vh - 60px); /* Adjust height to account for header */
+    top: 60px;
+    position: fixed;
+    left: 0;
+    width: 200px;
+    background-color: #f2f3f4;
+    z-index: 100;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    font-weight: 600;
+}
+
+.sidebar a span {
+    padding-left: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+/* Header */
+.navbar {
+    z-index: 1020; /* Ensure it stays on top of other elements */
+    height: 60px; /* Consistent header height */
+}
+
+/* Search bar */
+form.d-flex input[type="search"] {
+    width: 250px;
+    max-width: 100%;
+    z-index: 1021; /* Ensure it appears above other content */
+    position: relative;
+}
+
+/* Avatar image */
+img[src="/images/login-avatar.png"] {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    margin-top: 5px;
+    z-index: 1030; /* Ensure dropdown is above other elements */
+}
+
+/* Main content */
+main {
+    margin-left: 200px; /* Width of the sidebar */
+    padding-top: 60px; /* Height of the header */
+    background-color: #f2f3f4;
+    height: calc(100vh - 60px); /* Adjust height */
+    overflow-y: auto;
+}

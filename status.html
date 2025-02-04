@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th"http://www.thymelaef.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section>
+
+	<div class="container mt-5">
+	<table id="example" class="display nowrap" style="width: 100%;">
+		<thead>
+			<tr>
+				<th>Sr.No</th>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Subject</th>
+				<th>Description</th>
+				<th>Date</th>
+				<th>Approve</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr th:each="e: ${statusList}">
+			 	<td th:text="${e.id}">1</td>
+			 	<td th:text="${e.empName}">Komal Sharma</td>
+			 	<td th:text="${e.position}">Developer</td>
+			 	<td th:text="${e.subject}">Application</td>
+			 	<td th:text="${e.text}">Hello I want a leave for 10 days</td>
+			 	<td th:text="${e.addedDate}">2024-04-01</td>
+			 	
+			 	<td style="cursor: pointer">
+			 	
+			 	<span th:if="${e.status == 'PENDING'}">
+			 		<i th:onclick="|approved(${e.id}, 'APPROVE')|" style="color: green" class="fas fa-check-circle" title="Approved"></i>
+			 		<i th:onclick="|approved(${e.id}, 'DENIED')|" style="color: red" class="fas fa-times-circle" title="Denied"></i>
+			 		<i th:onclick="|approved(${e.id}, 'CANCELLED')|" style="color: #f1c40f" class="fas fa-ban" title="Cancelled"></i>
+			 	</span>
+			 	
+			 		<span th:unless="${e.status == 'PENDING'}">
+			 		<span th:text="${e.status}"> </span>
+			 		</span>
+			 			
+			 	</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</section>
+	
+ 
+</body>
+</html>

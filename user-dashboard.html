@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th"http://www.thymelaef.org" th:replace="~{userbase::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section>
+ <div class="row">
+ 
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>Development [9]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>QA Testing [5]</b>
+			</div> 		
+ 		</div>
+ 	</div>
+ 		
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>Networking [9]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>HR Team [4]</b>
+			</div> 		
+ 		</div>	
+ 	</div>	
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>Security [2]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body">
+			<b>Sales Marketing [3]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 
+ </div>
+ 
+ <div class="row">
+ 
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-warning">
+			<b style="color: white;">Pending [9]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-success">
+			<b style="color: white;">Approved [5]</b>
+			</div> 		
+ 		</div>
+ 	</div>
+ 		
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-info">
+			<b style="color: white;">Cancelled [9]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-danger">
+			<b style="color: white;">Denied [4]</b>
+			</div> 		
+ 		</div>	
+ 	</div>	
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-primary">
+			<b style="color: white;">All [26]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 	
+ 	<div class="col-6 col-sm-2 mt-2">
+ 		<div class="card" style="cursor: pointer;">
+			<div class="card-body bg-secondary">
+			<b style="color: white;">Remained [3]</b>
+			</div> 		
+ 		</div>	
+ 	</div>
+ 
+ </div>
+ 
+ <!-- End -->
+ 
+ <div class="row mb-5">
+ 
+ 	<div class="col-md-8 mt-3">
+ 	
+ 		<div class="card">
+ 			<div class="card-body">
+ 				<h5>Recent Activity</h5>
+ 				<hr>
+ 					<table class="table" style="width: 100%;">
+		<thead>
+			<tr>
+				<th>Sr.No</th>
+				<th>Subject</th>
+				<th>Description</th>
+				
+				<th>Date</th>
+				<th>For Approve</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr th:each="e,i: ${statusList}">
+			 	<td th:text="${i.index + 1}">1</td>
+				<td th:text="${e.subject}">Application</td>
+
+			 	<td th:text="${e.text}">Hello I want a leave for 10 days</td>
+			 	<td th:text="${e.addedDate}">2024-04-01</td>
+			 	
+			 	<td style="cursor: pointer">
+			 	
+			 	
+			 		<span th:text="${e.status}"> </span>
+			 		
+			 			
+			 	</td>
+			</tr>
+		</tbody>
+	</table>
+ 				
+ 			</div>
+ 		</div>
+ 	
+  	</div>
+ 
+	 <div class="col-md-4 mt-3">
+ 		<div class="card">
+ 			<div class="card-body">
+ 				<h5>Up-Coming Birthday's & Anniversary</h5>
+ 				<hr>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/login-avatar.png" style="height: 35px; width:35px; border-radius: 50%;">
+ 					<b class="mt-1">Kaveri Lahore</b>
+ 					<i class="fa-solid fa-cake-candles mt-1" style="color:orangered"></i>
+ 					<span class="mt-1">14-02-2025</span>
+ 				</div>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/male.jpg" style="height: 35px; width: 35px; border-radius: 50%;">
+ 					<b class="mt-1">Rajat Sikhavat</b>
+ 					<i class="fa-solid fa-gift mt-1" style="color:rgb(0, 255, 64)"></i>
+ 					<span class="mt-1">30-01-2025</span>
+ 				</div>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/login-avatar.png" style="height: 35px; width:35px; border-radius: 50%;">
+ 					<b class="mt-1">Kaveri Lahore</b>
+ 					<i class="fa-solid fa-cake-candles mt-1" style="color:orangered"></i>
+ 					<span class="mt-1">14-02-2025</span>
+ 				</div>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/male.jpg" style="height: 35px; width: 35px; border-radius: 50%;">
+ 					<b class="mt-1">Rajat Sikhavat</b>
+ 					<i class="fa-solid fa-gift mt-1" style="color:rgb(0, 255, 64)"></i>
+ 					<span class="mt-1">30-01-2025</span>
+ 				</div>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/login-avatar.png" style="height: 35px; width: 35px; border-radius: 50%">
+ 					<b class="mt-1">Kaveri Lahore</b>
+ 					<i class="fa-solid fa-cake-candles mt-1" style="color:orangered"></i>
+ 					<span class="mt-1">14-02-2025</span>
+ 				</div>
+ 				
+ 				<div class="d-flex justify-content-around v-100 mt-2">
+ 					<img alt="img" src="/images/male.jpg" style="height: 35px; width: 35px; border-radius: 50%">
+ 					<b class="mt-1">Rajat Sikhavat</b>
+ 					<i class="fa-solid fa-gift mt-1" style="color:rgb(0, 255, 64)"></i>
+ 					<span class="mt-1">30-01-2025</span>
+ 				</div>
+ 				
+ 			</div>
+ 		</div>
+ 	</div>
+ 	
+ </div>
+ 
+
+ 
+ </section>
+ 
+</body>
+</html>
